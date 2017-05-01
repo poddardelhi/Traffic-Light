@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_oLxNAAi0EeeRPY5OSrKe7A" name="RootElement">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_vX-BEBnjEeeE0d8tCboazw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_onL00BPEEeeDYq5EjN_X8Q" name="Timer">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BYn64BPVEeeDYq5EjN_X8Q" name="ClockTick">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_s-dNYBexEeeZlaE2Sn_hlg" name="Time"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_FpFqgBPVEeeDYq5EjN_X8Q" name="startClockTick"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_fRSjkBRgEeenIJXR3hwm5Q" name="resetClockTick"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_v-GYABPEEeeDYq5EjN_X8Q" name="Controller">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BgkFsBeVEeeZlaE2Sn_hlg" name="turnPedLightGreen"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yL7BgBeVEeeZlaE2Sn_hlg" name="turnCarLightGreen"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_7i5GABeXEeeZlaE2Sn_hlg" name="callStartClockTick"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_M1VeMBeYEeeZlaE2Sn_hlg" name="callResetClockTick"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_yoOIcCR5EeeG05qad0ILEw" name="turnPedLightRed"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6CF5ACR5EeeG05qad0ILEw" name="turnCarLightYellow"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_E5ZZwCR6EeeG05qad0ILEw" name="turnCarLightRed"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_yVtIkBPEEeeDYq5EjN_X8Q" name="PedestrianLight" visibility="public">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uPOo4BRoEeenIJXR3hwm5Q" name="pedesterianLightType" type="_AcviMBRpEeenIJXR3hwm5Q">
+      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_9du2kBRsEeenIJXR3hwm5Q" name="Green"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_L6mywBeBEeeZlaE2Sn_hlg" name="button_Pressed_Type" type="_FNY3YBeCEeeZlaE2Sn_hlg">
+      <defaultValue xmi:type="uml:LiteralNull" xmi:id="_tWTRABeCEeeZlaE2Sn_hlg" name="NULL"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_LED4YBeZEeeZlaE2Sn_hlg" name="currentPedLight" type="_AcviMBRpEeenIJXR3hwm5Q">
+      <defaultValue xmi:type="uml:InstanceValue" xmi:id="_LxcGUBeaEeeZlaE2Sn_hlg" name="Red" type="_AcviMBRpEeenIJXR3hwm5Q"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_z3f3MCT2EeeUbcd7ERkwCg" name="controller" type="_v-GYABPEEeeDYq5EjN_X8Q" association="_z3cz4CT2EeeUbcd7ERkwCg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Iw2iIBPUEeeDYq5EjN_X8Q" name="buttonPressed" concurrency="concurrent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XoVGABixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qMJ-cBhtEeeb2Ll3msUjlQ" name="isPedLightGreen">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_RPEd4BixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_4ZCT4BhtEeeb2Ll3msUjlQ" name="isPedLightRed">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_UEDG8BixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2Q7oABPEEeeDYq5EjN_X8Q" name="CarLight">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_HbJJoBRnEeenIJXR3hwm5Q" name="carLightType" type="_QBf7cBRnEeenIJXR3hwm5Q">
+      <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_HulbUBRtEeenIJXR3hwm5Q" name="Red"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_TBWCkBeaEeeZlaE2Sn_hlg" name="currentCarLight" type="_QBf7cBRnEeenIJXR3hwm5Q">
+      <defaultValue xmi:type="uml:InstanceValue" xmi:id="_jED4QBeaEeeZlaE2Sn_hlg" name="Green" type="_QBf7cBRnEeenIJXR3hwm5Q"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_08gXcCT2EeeUbcd7ERkwCg" name="controller" type="_v-GYABPEEeeDYq5EjN_X8Q" association="_08fJUCT2EeeUbcd7ERkwCg"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_TW-WcBhtEeeb2Ll3msUjlQ" name="isGreen">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_E_gJsBixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_X4xtsBhtEeeb2Ll3msUjlQ" name="isYellow" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KpZKYBixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cM2yABhtEeeb2Ll3msUjlQ" name="isRed">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_N6xbkBixEeeVBZW7YyUBCA" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_rGEAUBPrEeeDYq5EjN_X8Q"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_pjNL0BP-EeenIJXR3hwm5Q" name="GetLightStatus"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_QBf7cBRnEeenIJXR3hwm5Q" name="CarLightType" visibility="public">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fpo6UBRoEeenIJXR3hwm5Q" name="Green"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_HxSjUBRoEeenIJXR3hwm5Q" name="Yellow"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LVwvoBRoEeenIJXR3hwm5Q" name="Red"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_AcviMBRpEeenIJXR3hwm5Q" name="PedesterianLightType" isAbstract="true">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FizVsBRsEeenIJXR3hwm5Q" name="Red">
+      <specification xmi:type="uml:LiteralString" xmi:id="_sLg4EBeyEee8S45yNAJDGg" name="Value" value="Red"/>
+    </ownedLiteral>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_phTfIBezEee8S45yNAJDGg" name="Green">
+      <specification xmi:type="uml:LiteralString" xmi:id="_uJ8eMBezEee8S45yNAJDGg" name="Value" value="Green"/>
+    </ownedLiteral>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_FNY3YBeCEeeZlaE2Sn_hlg" name="ButtonType">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H2C7sBeCEeeZlaE2Sn_hlg" name="ButtonA"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_LTxm0BeCEeeZlaE2Sn_hlg" name="ButtonB"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_z3cz4CT2EeeUbcd7ERkwCg" memberEnd="_z3f3MCT2EeeUbcd7ERkwCg _z3geQCT2EeeUbcd7ERkwCg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z3epECT2EeeUbcd7ERkwCg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_z3fQICT2EeeUbcd7ERkwCg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_z3geQCT2EeeUbcd7ERkwCg" name="pedestrianlight" type="_yVtIkBPEEeeDYq5EjN_X8Q" association="_z3cz4CT2EeeUbcd7ERkwCg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_08fJUCT2EeeUbcd7ERkwCg" memberEnd="_08gXcCT2EeeUbcd7ERkwCg _08gXcST2EeeUbcd7ERkwCg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_08fwYCT2EeeUbcd7ERkwCg" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_08fwYST2EeeUbcd7ERkwCg" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_08gXcST2EeeUbcd7ERkwCg" name="carlight" type="_2Q7oABPEEeeDYq5EjN_X8Q" association="_08fJUCT2EeeUbcd7ERkwCg"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_6ACOoBPSEeeDYq5EjN_X8Q">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6ADcwBPSEeeDYq5EjN_X8Q" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
